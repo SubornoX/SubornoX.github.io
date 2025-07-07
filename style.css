@@ -1344,6 +1344,15 @@ section {
     width: 100%;
 }
 
+  .about-image .image-icon img {
+    width: 350px;           /* Adjust size as needed */
+    height: 350px;          /* Adjust size as needed */
+    object-fit: cover;
+    border-radius: 50%;     /* Makes the image circular */
+    border: 2px solid #eaeaea; /* Optional: blue border */
+    box-shadow: 0 4px 8px rgba(94, 99, 255, 0.1); /* Optional: subtle shadow */
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {
@@ -1482,4 +1491,5 @@ section {
     .timeline-content {
         margin-left: 1rem;
     }
+  
 }
