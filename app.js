@@ -1,195 +1,29 @@
-// Portfolio Website JavaScript
-
-// Application data
-const portfolioData = {
-  "portfolio_projects": [
-    {
-      "title": "E-Commerce Platform",
-      "description": "Modern e-commerce website with shopping cart and payment integration",
-      "technologies": ["React", "Node.js", "MongoDB", "Stripe"],
-      "category": "web-development",
-      "image": "project1.jpg"
-    },
-    {
-      "title": "Mobile Banking App",
-      "description": "Secure mobile banking application with biometric authentication",
-      "technologies": ["React Native", "Firebase", "Redux"],
-      "category": "mobile-development",
-      "image": "project2.jpg"
-    },
-    {
-      "title": "Corporate Website",
-      "description": "Professional corporate website with CMS integration",
-      "technologies": ["WordPress", "PHP", "MySQL", "jQuery"],
-      "category": "web-development",
-      "image": "project3.jpg"
-    },
-    {
-      "title": "Travel App UI/UX",
-      "description": "Beautiful travel application interface design",
-      "technologies": ["Figma", "Adobe XD", "Principle"],
-      "category": "design",
-      "image": "project4.jpg"
-    },
-    {
-      "title": "Restaurant Management",
-      "description": "Complete restaurant management system with inventory",
-      "technologies": ["Vue.js", "Laravel", "PostgreSQL"],
-      "category": "web-development",
-      "image": "project5.jpg"
-    },
-    {
-      "title": "Brand Identity Design",
-      "description": "Complete brand identity package for tech startup",
-      "technologies": ["Illustrator", "Photoshop", "InDesign"],
-      "category": "design",
-      "image": "project6.jpg"
-    }
-  ],
-  "skills": {
-    "technical": [
-      {"name": "JavaScript", "level": 90},
-      {"name": "React", "level": 85},
-      {"name": "Node.js", "level": 80},
-      {"name": "Python", "level": 75},
-      {"name": "PHP", "level": 70},
-      {"name": "MongoDB", "level": 85}
-    ],
-    "design": [
-      {"name": "UI/UX Design", "level": 90},
-      {"name": "Adobe Creative Suite", "level": 85},
-      {"name": "Figma", "level": 95},
-      {"name": "Responsive Design", "level": 90}
-    ],
-    "marketing": [
-      {"name": "SEO", "level": 80},
-      {"name": "Google Analytics", "level": 75},
-      {"name": "Social Media Marketing", "level": 70},
-      {"name": "Content Marketing", "level": 75}
-    ]
-  },
-  "experience": [
-    {
-      "title": "Senior Web Developer",
-      "company": "Tech Solutions Inc.",
-      "duration": "2022 - Present",
-      "description": "Led development of complex web applications and mentored junior developers"
-    },
-    {
-      "title": "Full-Stack Developer",
-      "company": "Digital Agency Pro",
-      "duration": "2020 - 2022",
-      "description": "Developed responsive websites and web applications for various clients"
-    },
-    {
-      "title": "Frontend Developer",
-      "company": "StartupXYZ",
-      "duration": "2018 - 2020",
-      "description": "Created user interfaces and implemented responsive designs"
-    }
-  ],
-  "testimonials": [
-    {
-      "name": "Sarah Johnson",
-      "company": "TechCorp",
-      "role": "Project Manager",
-      "text": "Exceptional work quality and great communication throughout the project. Highly recommended!",
-      "rating": 5
-    },
-    {
-      "name": "Michael Chen",
-      "company": "E-Commerce Plus",
-      "role": "CEO",
-      "text": "Delivered our project on time and exceeded our expectations. Professional and skilled developer.",
-      "rating": 5
-    },
-    {
-      "name": "Emily Davis",
-      "company": "Creative Studio",
-      "role": "Design Director",
-      "text": "Amazing attention to detail and perfect implementation of our design requirements.",
-      "rating": 5
-    }
-  ],
-  "services": [
-    {
-      "title": "Web Development",
-      "description": "Custom websites and web applications built with modern technologies",
-      "icon": "💻"
-    },
-    {
-      "title": "UI/UX Design",
-      "description": "User-centered design solutions that engage and convert visitors",
-      "icon": "🎨"
-    },
-    {
-      "title": "Mobile Development",
-      "description": "Native and cross-platform mobile applications for iOS and Android",
-      "icon": "📱"
-    },
-    {
-      "title": "SEO Optimization",
-      "description": "Search engine optimization to improve your website's visibility",
-      "icon": "🔍"
-    }
-  ]
-};
-
-// Global variables
-let currentTestimonial = 0;
-let testimonialInterval;
-
-// DOM Elements
-const navToggle = document.getElementById('nav-toggle');
-const navMenu = document.getElementById('nav-menu');
-const navLinks = document.querySelectorAll('.nav-link');
-const navbar = document.getElementById('navbar');
-const backToTop = document.getElementById('back-to-top');
-const contactForm = document.getElementById('contact-form');
-const modal = document.getElementById('project-modal');
-const modalClose = document.getElementById('modal-close');
-const modalBody = document.getElementById('modal-body');
-
-// Initialize application
+// DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
-    initializeApp();
+    // Initialize all functionality
+    initNavigation();
+    initScrollAnimations();
+    initSkillBars();
+    initContactForm();
+    initProjectButtons();
+    initTypingAnimation();
+    initMobileMenu();
 });
 
-function initializeApp() {
-    setupNavigation();
-    setupScrollEffects();
-    populateSkills();
-    populateServices();
-    populatePortfolio();
-    populateExperience();
-    populateTestimonials();
-    setupPortfolioFilters();
-    setupTestimonialSlider();
-    setupContactForm();
-    setupModal();
-    setupAnimations();
-}
-
 // Navigation functionality
-function setupNavigation() {
-    // Mobile menu toggle
-    navToggle.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-        
-        // Animate hamburger
-        const spans = navToggle.querySelectorAll('span');
-        spans.forEach((span, index) => {
-            if (navMenu.classList.contains('active')) {
-                if (index === 0) span.style.transform = 'rotate(45deg) translate(5px, 5px)';
-                if (index === 1) span.style.opacity = '0';
-                if (index === 2) span.style.transform = 'rotate(-45deg) translate(7px, -6px)';
-            } else {
-                span.style.transform = 'none';
-                span.style.opacity = '1';
-            }
-        });
+function initNavigation() {
+    const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    // Handle navbar background on scroll
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     });
-
+    
     // Smooth scrolling for navigation links
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -198,413 +32,530 @@ function setupNavigation() {
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 80;
+                const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
                 });
             }
             
-            // Close mobile menu
-            navMenu.classList.remove('active');
-            resetHamburger();
+            // Close mobile menu if open
+            const navMenu = document.querySelector('.nav-menu');
+            const navToggle = document.querySelector('.nav-toggle');
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            }
         });
     });
+}
 
-    // Close mobile menu when clicking outside
+// Mobile menu functionality
+function initMobileMenu() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+    });
+    
+    // Close menu when clicking outside
     document.addEventListener('click', function(e) {
         if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
             navMenu.classList.remove('active');
-            resetHamburger();
+            navToggle.classList.remove('active');
         }
     });
 }
 
-function resetHamburger() {
-    const spans = navToggle.querySelectorAll('span');
-    spans.forEach(span => {
-        span.style.transform = 'none';
-        span.style.opacity = '1';
-    });
-}
-
-// Scroll effects
-function setupScrollEffects() {
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset;
-        
-        // Sticky navigation
-        if (scrollTop > 100) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-        
-        // Back to top button
-        if (scrollTop > 500) {
-            backToTop.classList.add('show');
-        } else {
-            backToTop.classList.remove('show');
-        }
-        
-        // Update active navigation link
-        updateActiveNavLink();
-    });
-    
-    // Back to top functionality
-    backToTop.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-}
-
-function updateActiveNavLink() {
-    const sections = document.querySelectorAll('section[id]');
-    const scrollTop = window.pageYOffset + 100;
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
-        
-        if (scrollTop >= sectionTop && scrollTop < sectionTop + sectionHeight) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${sectionId}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
-    });
-}
-
-// Populate skills section
-function populateSkills() {
-    const technicalSkills = document.getElementById('technical-skills');
-    const designSkills = document.getElementById('design-skills');
-    const marketingSkills = document.getElementById('marketing-skills');
-    
-    portfolioData.skills.technical.forEach(skill => {
-        technicalSkills.appendChild(createSkillElement(skill));
-    });
-    
-    portfolioData.skills.design.forEach(skill => {
-        designSkills.appendChild(createSkillElement(skill));
-    });
-    
-    portfolioData.skills.marketing.forEach(skill => {
-        marketingSkills.appendChild(createSkillElement(skill));
-    });
-}
-
-function createSkillElement(skill) {
-    const skillElement = document.createElement('div');
-    skillElement.className = 'skill-item';
-    skillElement.innerHTML = `
-        <span class="skill-name">${skill.name}</span>
-        <span class="skill-level">${skill.level}%</span>
-    `;
-    return skillElement;
-}
-
-// Populate services section
-function populateServices() {
-    const servicesGrid = document.getElementById('services-grid');
-    
-    portfolioData.services.forEach(service => {
-        const serviceCard = document.createElement('div');
-        serviceCard.className = 'service-card';
-        serviceCard.innerHTML = `
-            <div class="service-icon">${service.icon}</div>
-            <h3>${service.title}</h3>
-            <p>${service.description}</p>
-        `;
-        servicesGrid.appendChild(serviceCard);
-    });
-}
-
-// Populate portfolio section
-function populatePortfolio() {
-    const portfolioGrid = document.getElementById('portfolio-grid');
-    
-    portfolioData.portfolio_projects.forEach(project => {
-        const portfolioItem = document.createElement('div');
-        portfolioItem.className = `portfolio-item ${project.category}`;
-        portfolioItem.innerHTML = `
-            <div class="portfolio-image"></div>
-            <div class="portfolio-content">
-                <h3>${project.title}</h3>
-                <p>${project.description}</p>
-                <div class="portfolio-tech">
-                    ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
-                </div>
-            </div>
-        `;
-        
-        portfolioItem.addEventListener('click', () => openProjectModal(project));
-        portfolioGrid.appendChild(portfolioItem);
-    });
-}
-
-// Portfolio filters
-function setupPortfolioFilters() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
-    
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const filterValue = this.getAttribute('data-filter');
-            
-            // Update active button
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            
-            // Filter portfolio items with smooth transition
-            portfolioItems.forEach(item => {
-                if (filterValue === 'all' || item.classList.contains(filterValue)) {
-                    item.style.display = 'block';
-                    setTimeout(() => {
-                        item.classList.remove('hidden');
-                    }, 10);
-                } else {
-                    item.classList.add('hidden');
-                    setTimeout(() => {
-                        item.style.display = 'none';
-                    }, 300);
-                }
-            });
-        });
-    });
-}
-
-// Populate experience section
-function populateExperience() {
-    const experienceTimeline = document.getElementById('experience-timeline');
-    
-    portfolioData.experience.forEach(exp => {
-        const timelineItem = document.createElement('div');
-        timelineItem.className = 'timeline-item';
-        timelineItem.innerHTML = `
-            <div class="timeline-content">
-                <h3>${exp.title}</h3>
-                <div class="company">${exp.company}</div>
-                <div class="duration">${exp.duration}</div>
-                <p>${exp.description}</p>
-            </div>
-        `;
-        experienceTimeline.appendChild(timelineItem);
-    });
-}
-
-// Populate testimonials section
-function populateTestimonials() {
-    const testimonialsSlider = document.getElementById('testimonials-slider');
-    
-    portfolioData.testimonials.forEach((testimonial, index) => {
-        const testimonialItem = document.createElement('div');
-        testimonialItem.className = `testimonial-item ${index === 0 ? 'active' : ''}`;
-        testimonialItem.innerHTML = `
-            <p class="testimonial-text">"${testimonial.text}"</p>
-            <div class="testimonial-author">
-                <div class="testimonial-avatar">${testimonial.name.charAt(0)}</div>
-                <div class="testimonial-info">
-                    <h4>${testimonial.name}</h4>
-                    <p>${testimonial.role} at ${testimonial.company}</p>
-                    <div class="testimonial-rating">${'★'.repeat(testimonial.rating)}</div>
-                </div>
-            </div>
-        `;
-        testimonialsSlider.appendChild(testimonialItem);
-    });
-}
-
-// Testimonial slider - Fixed implementation
-function setupTestimonialSlider() {
-    const testimonialItems = document.querySelectorAll('.testimonial-item');
-    const prevBtn = document.getElementById('testimonials-prev');
-    const nextBtn = document.getElementById('testimonials-next');
-    
-    if (testimonialItems.length === 0) return;
-    
-    function showTestimonial(index) {
-        testimonialItems.forEach((item, i) => {
-            item.classList.toggle('active', i === index);
-        });
-    }
-    
-    function nextTestimonial() {
-        currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
-        showTestimonial(currentTestimonial);
-    }
-    
-    function prevTestimonial() {
-        currentTestimonial = (currentTestimonial - 1 + testimonialItems.length) % testimonialItems.length;
-        showTestimonial(currentTestimonial);
-    }
-    
-    // Add event listeners
-    if (prevBtn) {
-        prevBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            clearInterval(testimonialInterval);
-            prevTestimonial();
-            startTestimonialInterval();
-        });
-    }
-    
-    if (nextBtn) {
-        nextBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            clearInterval(testimonialInterval);
-            nextTestimonial();
-            startTestimonialInterval();
-        });
-    }
-    
-    // Auto-advance testimonials
-    function startTestimonialInterval() {
-        testimonialInterval = setInterval(nextTestimonial, 5000);
-    }
-    
-    // Start auto-advance
-    startTestimonialInterval();
-    
-    // Pause on hover
-    const testimonialsSection = document.getElementById('testimonials');
-    if (testimonialsSection) {
-        testimonialsSection.addEventListener('mouseenter', () => {
-            clearInterval(testimonialInterval);
-        });
-        
-        testimonialsSection.addEventListener('mouseleave', () => {
-            startTestimonialInterval();
-        });
-    }
-}
-
-// Contact form
-function setupContactForm() {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = new FormData(this);
-        const data = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            subject: formData.get('subject'),
-            message: formData.get('message')
-        };
-        
-        // Basic validation
-        if (!data.name || !data.email || !data.subject || !data.message) {
-            alert('Please fill in all fields.');
-            return;
-        }
-        
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(data.email)) {
-            alert('Please enter a valid email address.');
-            return;
-        }
-        
-        // Simulate form submission
-        const submitBtn = this.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-        
-        setTimeout(() => {
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            this.reset();
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        }, 2000);
-    });
-}
-
-// Modal functionality
-function setupModal() {
-    modalClose.addEventListener('click', closeModal);
-    
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-    
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.classList.contains('show')) {
-            closeModal();
-        }
-    });
-}
-
-function openProjectModal(project) {
-    modalBody.innerHTML = `
-        <h2>${project.title}</h2>
-        <div class="modal-project-image" style="width: 100%; height: 200px; background: linear-gradient(135deg, #3498db, #2c3e50); border-radius: 10px; margin: 1rem 0; display: flex; align-items: center; justify-content: center; font-size: 3rem; opacity: 0.3;">🖼️</div>
-        <p style="margin: 1rem 0; color: #6c757d; line-height: 1.6;">${project.description}</p>
-        <div style="margin: 1rem 0;">
-            <h4 style="margin-bottom: 0.5rem;">Technologies Used:</h4>
-            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
-            </div>
-        </div>
-        <div style="margin: 1rem 0;">
-            <h4 style="margin-bottom: 0.5rem;">Project Category:</h4>
-            <p style="color: #6c757d; text-transform: capitalize;">${project.category.replace('-', ' ')}</p>
-        </div>
-        <div style="margin-top: 2rem; display: flex; gap: 1rem;">
-            <button class="btn btn--primary" onclick="alert('Live demo would open here')">View Live Demo</button>
-            <button class="btn btn--outline" onclick="alert('GitHub repository would open here')">View Code</button>
-        </div>
-    `;
-    
-    modal.classList.add('show');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-    modal.classList.remove('show');
-    document.body.style.overflow = 'auto';
-}
-
-// Animation effects
-function setupAnimations() {
+// Scroll animations
+function initScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
     
-    const observer = new IntersectionObserver(function(entries) {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                entry.target.classList.add('animate');
             }
         });
     }, observerOptions);
     
-    // Add fade-in animation to sections
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        section.classList.add('fade-in');
-        observer.observe(section);
-    });
-    
-    // Add slide-up animation to cards
-    const cards = document.querySelectorAll('.service-card, .portfolio-item, .timeline-item');
-    cards.forEach(card => {
-        card.classList.add('slide-up');
-        observer.observe(card);
+    // Observe elements for animation
+    const animateElements = document.querySelectorAll('.skill-item, .project-card, .timeline-item, .contact-item');
+    animateElements.forEach(element => {
+        observer.observe(element);
     });
 }
 
-// Additional utility functions
-function debounce(func, wait) {
+// Skill bars animation
+function initSkillBars() {
+    const skillBars = document.querySelectorAll('.skill-progress');
+    
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const skillBar = entry.target;
+                const width = skillBar.getAttribute('data-width');
+                
+                // Animate the skill bar
+                setTimeout(() => {
+                    skillBar.style.width = width + '%';
+                }, 200);
+                
+                // Animate the percentage counter
+                const skillItem = skillBar.closest('.skill-item');
+                const percentageElement = skillItem.querySelector('.skill-percentage');
+                animateCounter(percentageElement, 0, parseInt(width), 1000);
+                
+                skillObserver.unobserve(skillBar);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    skillBars.forEach(bar => {
+        skillObserver.observe(bar);
+    });
+}
+
+// Counter animation helper
+function animateCounter(element, start, end, duration) {
+    const startTime = performance.now();
+    const startValue = start;
+    const endValue = end;
+    
+    function updateCounter(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        const currentValue = Math.floor(startValue + (endValue - startValue) * easeOutQuart(progress));
+        element.textContent = currentValue + '%';
+        
+        if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+        }
+    }
+    
+    requestAnimationFrame(updateCounter);
+}
+
+// Easing function
+function easeOutQuart(t) {
+    return 1 - Math.pow(1 - t, 4);
+}
+
+// Contact form functionality
+function initContactForm() {
+    const contactForm = document.getElementById('contactForm');
+    
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(contactForm);
+        const formObject = {};
+        
+        formData.forEach((value, key) => {
+            formObject[key] = value;
+        });
+        
+        // Validate form
+        if (validateForm(formObject)) {
+            // Simulate form submission
+            submitForm(formObject);
+        }
+    });
+    
+    // Real-time validation
+    const inputs = contactForm.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+            validateField(this);
+        });
+        
+        input.addEventListener('input', function() {
+            if (this.classList.contains('error')) {
+                validateField(this);
+            }
+        });
+    });
+}
+
+// Form validation
+function validateForm(formData) {
+    let isValid = true;
+    const form = document.getElementById('contactForm');
+    
+    // Clear previous errors
+    const errorElements = form.querySelectorAll('.error-message');
+    errorElements.forEach(error => error.remove());
+    
+    const inputs = form.querySelectorAll('input, textarea');
+    inputs.forEach(input => input.classList.remove('error'));
+    
+    // Validate name
+    if (!formData.name || formData.name.trim().length < 2) {
+        showFieldError(form.querySelector('#name'), 'Name must be at least 2 characters long');
+        isValid = false;
+    }
+    
+    // Validate email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email || !emailRegex.test(formData.email)) {
+        showFieldError(form.querySelector('#email'), 'Please enter a valid email address');
+        isValid = false;
+    }
+    
+    // Validate subject
+    if (!formData.subject || formData.subject.trim().length < 3) {
+        showFieldError(form.querySelector('#subject'), 'Subject must be at least 3 characters long');
+        isValid = false;
+    }
+    
+    // Validate message
+    if (!formData.message || formData.message.trim().length < 10) {
+        showFieldError(form.querySelector('#message'), 'Message must be at least 10 characters long');
+        isValid = false;
+    }
+    
+    return isValid;
+}
+
+// Validate individual field
+function validateField(field) {
+    const value = field.value.trim();
+    let isValid = true;
+    let errorMessage = '';
+    
+    switch (field.id) {
+        case 'name':
+            if (value.length < 2) {
+                errorMessage = 'Name must be at least 2 characters long';
+                isValid = false;
+            }
+            break;
+        case 'email':
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(value)) {
+                errorMessage = 'Please enter a valid email address';
+                isValid = false;
+            }
+            break;
+        case 'subject':
+            if (value.length < 3) {
+                errorMessage = 'Subject must be at least 3 characters long';
+                isValid = false;
+            }
+            break;
+        case 'message':
+            if (value.length < 10) {
+                errorMessage = 'Message must be at least 10 characters long';
+                isValid = false;
+            }
+            break;
+    }
+    
+    if (isValid) {
+        field.classList.remove('error');
+        const existingError = field.parentNode.querySelector('.error-message');
+        if (existingError) {
+            existingError.remove();
+        }
+    } else {
+        showFieldError(field, errorMessage);
+    }
+    
+    return isValid;
+}
+
+// Show field error
+function showFieldError(field, message) {
+    field.classList.add('error');
+    
+    // Remove existing error message
+    const existingError = field.parentNode.querySelector('.error-message');
+    if (existingError) {
+        existingError.remove();
+    }
+    
+    // Add new error message
+    const errorElement = document.createElement('div');
+    errorElement.className = 'error-message';
+    errorElement.textContent = message;
+    errorElement.style.cssText = 'color: #ff6b6b; font-size: 0.9rem; margin-top: 0.5rem;';
+    
+    field.parentNode.appendChild(errorElement);
+}
+
+// Simulate form submission
+function submitForm(formData) {
+    const submitButton = document.querySelector('#contactForm button[type="submit"]');
+    const originalText = submitButton.textContent;
+    
+    // Show loading state
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
+    
+    // Simulate API call
+    setTimeout(() => {
+        // Show success message
+        showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+        
+        // Reset form
+        document.getElementById('contactForm').reset();
+        
+        // Reset button
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+    }, 2000);
+}
+
+// Show notification
+function showNotification(message, type = 'success') {
+    const notification = document.createElement('div');
+    notification.className = `notification notification--${type}`;
+    notification.textContent = message;
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 1rem 2rem;
+        background: ${type === 'success' ? '#00ff88' : '#ff6b6b'};
+        color: #0a0a0a;
+        border-radius: 8px;
+        font-weight: 600;
+        z-index: 10000;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Animate in
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Remove after delay
+    setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            document.body.removeChild(notification);
+        }, 300);
+    }, 5000);
+}
+
+// Project buttons functionality
+function initProjectButtons() {
+    const projectButtons = document.querySelectorAll('.project-btn');
+    
+    projectButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const projectCard = this.closest('.project-card');
+            const projectTitle = projectCard.querySelector('h3').textContent;
+            
+            // Show project details modal (simplified for demo)
+            showProjectModal(projectTitle);
+        });
+    });
+}
+
+// Show project modal
+function showProjectModal(projectTitle) {
+    const modal = document.createElement('div');
+    modal.className = 'project-modal';
+    modal.innerHTML = `
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>${projectTitle}</h3>
+                    <button class="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>This is a demonstration of the project details modal. In a real implementation, this would show detailed information about the ${projectTitle} project, including:</p>
+                    <ul>
+                        <li>Detailed project description</li>
+                        <li>Technical specifications</li>
+                        <li>Implementation details</li>
+                        <li>Challenges and solutions</li>
+                        <li>Project outcomes</li>
+                        <li>Links to live demo or repository</li>
+                    </ul>
+                    <p>You can customize this modal to include images, videos, code snippets, or any other relevant project information.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn--primary modal-close">Close</button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+    `;
+    
+    const modalOverlay = modal.querySelector('.modal-overlay');
+    modalOverlay.style.cssText = `
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(5px);
+    `;
+    
+    const modalContent = modal.querySelector('.modal-content');
+    modalContent.style.cssText = `
+        background: #1a1a1a;
+        border-radius: 16px;
+        border: 1px solid #333;
+        max-width: 600px;
+        width: 100%;
+        max-height: 80vh;
+        overflow-y: auto;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    `;
+    
+    const modalHeader = modal.querySelector('.modal-header');
+    modalHeader.style.cssText = `
+        padding: 2rem;
+        border-bottom: 1px solid #333;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    `;
+    
+    const modalBody = modal.querySelector('.modal-body');
+    modalBody.style.cssText = `
+        padding: 2rem;
+        color: #b0b0b0;
+        line-height: 1.6;
+    `;
+    
+    const modalFooter = modal.querySelector('.modal-footer');
+    modalFooter.style.cssText = `
+        padding: 2rem;
+        border-top: 1px solid #333;
+        text-align: right;
+    `;
+    
+    const closeButtons = modal.querySelectorAll('.modal-close');
+    closeButtons.forEach(button => {
+        button.style.cssText = `
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: ${button.textContent === '×' ? '2rem' : '1rem'};
+            cursor: pointer;
+            padding: ${button.textContent === '×' ? '0' : '0.8rem 2rem'};
+        `;
+        
+        button.addEventListener('click', function() {
+            document.body.removeChild(modal);
+        });
+    });
+    
+    // Close on overlay click
+    modalOverlay.addEventListener('click', function(e) {
+        if (e.target === modalOverlay) {
+            document.body.removeChild(modal);
+        }
+    });
+    
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && document.body.contains(modal)) {
+            document.body.removeChild(modal);
+        }
+    });
+    
+    document.body.appendChild(modal);
+}
+
+// Typing animation for hero text
+function initTypingAnimation() {
+    const heroName = document.querySelector('.hero-name');
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    
+    if (heroName && heroSubtitle) {
+        // Add typing animation class
+        heroName.classList.add('typing-animation');
+        heroSubtitle.classList.add('typing-animation');
+        
+        // Optional: Add cursor effect
+        const style = document.createElement('style');
+        style.textContent = `
+            .typing-animation {
+                overflow: hidden;
+                border-right: 3px solid #00d4ff;
+                white-space: nowrap;
+                animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+            }
+            
+            @keyframes typing {
+                from { width: 0 }
+                to { width: 100% }
+            }
+            
+            @keyframes blink-caret {
+                from, to { border-color: transparent }
+                50% { border-color: #00d4ff }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Remove cursor after animation
+        setTimeout(() => {
+            heroName.style.borderRight = 'none';
+            heroSubtitle.style.borderRight = 'none';
+        }, 4000);
+    }
+}
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Add scroll reveal animations
+window.addEventListener('scroll', function() {
+    const elements = document.querySelectorAll('.skill-item, .project-card, .timeline-item');
+    elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add('animate');
+        }
+    });
+});
+
+// Performance optimization: Throttle scroll events
+function throttle(func, wait) {
     let timeout;
     return function executedFunction(...args) {
         const later = () => {
@@ -616,40 +567,32 @@ function debounce(func, wait) {
     };
 }
 
-// Smooth reveal animations for elements
-function revealElements() {
-    const elements = document.querySelectorAll('.fade-in:not(.visible)');
+// Apply throttling to scroll events
+window.addEventListener('scroll', throttle(() => {
+    // Scroll-based animations and effects
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.5;
     
-    elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < window.innerHeight - elementVisible) {
-            element.classList.add('visible');
-        }
-    });
-}
+    // Parallax effect for hero section
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        hero.style.transform = `translateY(${rate}px)`;
+    }
+}, 10));
 
-// Optimized scroll listener
-window.addEventListener('scroll', debounce(revealElements, 10));
-
-// Initialize reveal on load
-document.addEventListener('DOMContentLoaded', revealElements);
-
-// Add loading state management
-window.addEventListener('load', function() {
-    document.body.classList.add('loaded');
-});
-
-// Error handling for dynamic content
-window.addEventListener('error', function(e) {
-    console.error('Portfolio App Error:', e.error);
-});
-
-// Performance monitoring
-if ('performance' in window) {
-    window.addEventListener('load', function() {
-        const perfData = performance.getEntriesByType('navigation')[0];
-        console.log('Page Load Time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
-    });
-}
+// Add error styles for form validation
+const errorStyles = document.createElement('style');
+errorStyles.textContent = `
+    .contact-form input.error,
+    .contact-form textarea.error {
+        border-color: #ff6b6b;
+        box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+    }
+    
+    .error-message {
+        color: #ff6b6b;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+    }
+`;
+document.head.appendChild(errorStyles);

@@ -3,223 +3,352 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahamudul Hasan Suborno</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Mahamudul Hasan Suborno - Electrical Engineer & Embedded Systems Trainee</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <a href="#home" class="nav-logo">Mahamudul Hasan Suborno</a>
-                <ul class="nav-menu" id="nav-menu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                    <li><a href="#experience" class="nav-link">Experience</a></li>
-                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-                <div class="nav-toggle" id="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">MHS</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-background"></div>
-        <div class="container">
+    <section id="home" class="hero">
+        <div class="hero-container">
             <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">Hello, I'm <span class="hero-name">Mahamudul Hasan Suborno</span></h1>
-                    <p class="hero-subtitle">Electrical Engineer and Content Creator</p>
-                    <p class="hero-description">I create exceptional digital experiences that engage users and drive business results. Specializing in Embedded Systems and Robotics.</p>
-                    <div class="hero-buttons">
-                        <a href="#portfolio" class="btn btn--primary">View My Work</a>
-                        <a href="#contact" class="btn btn--outline">Contact Me</a>
-                    </div>
+                <h1 class="hero-title">
+                    <span class="hero-name">MAHAMUDUL HASAN SUBORNO</span>
+                    <span class="hero-subtitle">ELECTRICAL ENGINEER & EMBEDDED SYSTEMS TRAINEE</span>
+                </h1>
+                <p class="hero-tagline">Passionate about innovation and technology, building the future one circuit at a time</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn--primary">View Projects</a>
+                    <a href="#contact" class="btn btn--outline">Get In Touch</a>
                 </div>
-                <div class="hero-image">
-                    <div class="hero-avatar"></div>
-                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+                <span>Scroll Down</span>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about" id="about">
+    <section id="about" class="about">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Passionate developer with 5+ years of experience creating digital solutions</p>
+                <p class="section-subtitle">Passionate Engineer in Training</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>I'm a passionate Electrical Engineer 2 years of experience creating digital solutions that make a difference. My journey in tech started with a curiosity about how different digital divices work, and it has evolved into a career focused on building exceptional user experiences.</p>
-                    <p>I specialize in Embedded Systems and have a keen eye for innovation. I approach every project with attention to detail and a commitment to excellence.</p>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <h3>50+</h3>
-                            <p>Projects Completed</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>5+</h3>
-                            <p>Years Experience</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>30+</h3>
-                            <p>Happy Clients</p>
-                        </div>
-                    </div>
+                    <p>Hello! I'm Mahamudul Hasan Suborno, an Electrical Engineer and Embedded Systems Trainee with a passion for innovation and technology. Currently pursuing intensive training in embedded systems design, I'm dedicated to mastering the art of creating intelligent, connected devices that make a difference.</p>
+                    <p>My journey in electrical engineering has equipped me with strong fundamentals in circuit design, power systems, and electronic principles. Now, as an embedded systems trainee, I'm expanding my expertise in microcontroller programming, IoT development, and real-world application design.</p>
+                    <p>I believe in the power of technology to solve real-world problems and am constantly exploring new ways to integrate hardware and software solutions. My goal is to contribute to the rapidly evolving field of embedded systems and IoT technologies.</p>
                 </div>
-                <div class="about-skills">
-                    <div class="skills-category">
-                        <h3>Technical Skills</h3>
-                        <div class="skills-list" id="technical-skills"></div>
-                    </div>
-                    <div class="skills-category">
-                        <h3>Design Skills</h3>
-                        <div class="skills-list" id="design-skills"></div>
-                    </div>
-                    <div class="skills-category">
-                        <h3>Marketing Skills</h3>
-                        <div class="skills-list" id="marketing-skills"></div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <div class="image-icon">👨‍💻</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">My Services</h2>
-                <p class="section-subtitle">Comprehensive digital solutions tailored to your needs</p>
+                <h2 class="section-title">Technical Skills</h2>
+                <p class="section-subtitle">Building expertise in electrical engineering and embedded systems</p>
             </div>
-            <div class="services-grid" id="services-grid"></div>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h3>Electrical Engineering Fundamentals</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85"></div>
+                    </div>
+                    <span class="skill-percentage">85%</span>
+                </div>
+                <div class="skill-item">
+                    <h3>Embedded Systems</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="70"></div>
+                    </div>
+                    <span class="skill-percentage">70%</span>
+                </div>
+                <div class="skill-item">
+                    <h3>Microcontroller Programming</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="75"></div>
+                    </div>
+                    <span class="skill-percentage">75%</span>
+                </div>
+                <div class="skill-item">
+                    <h3>Circuit Design</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="80"></div>
+                    </div>
+                    <span class="skill-percentage">80%</span>
+                </div>
+                <div class="skill-item">
+                    <h3>PCB Design</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="60"></div>
+                    </div>
+                    <span class="skill-percentage">60%</span>
+                </div>
+                <div class="skill-item">
+                    <h3>C/C++ Programming</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="75"></div>
+                    </div>
+                    <span class="skill-percentage">75%</span>
+                </div>
+                <div class="skill-item">
+                    <h3>Python Programming</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="70"></div>
+                    </div>
+                    <span class="skill-percentage">70%</span>
+                </div>
+                <div class="skill-item">
+                    <h3>IoT Development</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="65"></div>
+                    </div>
+                    <span class="skill-percentage">65%</span>
+                </div>
+                <div class="skill-item">
+                    <h3>Arduino Platform</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="80"></div>
+                    </div>
+                    <span class="skill-percentage">80%</span>
+                </div>
+                <div class="skill-item">
+                    <h3>Problem Solving</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="90"></div>
+                    </div>
+                    <span class="skill-percentage">90%</span>
+                </div>
+            </div>
+            <div class="tools-section">
+                <h3>Tools & Technologies</h3>
+                <div class="tools-list">
+                    <span class="tool-tag">Arduino IDE</span>
+                    <span class="tool-tag">Proteus</span>
+                    <span class="tool-tag">KiCad</span>
+                    <span class="tool-tag">Altium Designer</span>
+                    <span class="tool-tag">MATLAB</span>
+                    <span class="tool-tag">Git</span>
+                    <span class="tool-tag">VS Code</span>
+                    <span class="tool-tag">Oscilloscope</span>
+                    <span class="tool-tag">Multimeter</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">My Portfolio</h2>
-                <p class="section-subtitle">Recent projects showcasing my skills and expertise</p>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Innovative solutions in embedded systems and IoT</p>
             </div>
-            <div class="portfolio-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="web-development">Web Development</button>
-                <button class="filter-btn" data-filter="mobile-development">Mobile Development</button>
-                <button class="filter-btn" data-filter="design">Design</button>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Smart Home Automation System</h3>
+                        <span class="project-category">IoT</span>
+                    </div>
+                    <p class="project-description">IoT-based home automation using Arduino and Wi-Fi connectivity to control appliances remotely via smartphone application.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Arduino</span>
+                        <span class="tech-tag">ESP8266</span>
+                        <span class="tech-tag">IoT</span>
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Mobile App</span>
+                    </div>
+                    <button class="project-btn">View Details</button>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Temperature Monitoring System</h3>
+                        <span class="project-category">Embedded Systems</span>
+                    </div>
+                    <p class="project-description">Real-time temperature monitoring with data logging and alert system using embedded sensors and display interfaces.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Arduino</span>
+                        <span class="tech-tag">Sensors</span>
+                        <span class="tech-tag">LCD Display</span>
+                        <span class="tech-tag">Data Logging</span>
+                    </div>
+                    <button class="project-btn">View Details</button>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>IoT Weather Station</h3>
+                        <span class="project-category">IoT</span>
+                    </div>
+                    <p class="project-description">Comprehensive weather monitoring system collecting humidity, temperature, and pressure data with cloud connectivity.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">ESP32</span>
+                        <span class="tech-tag">Sensors</span>
+                        <span class="tech-tag">Cloud Integration</span>
+                        <span class="tech-tag">Web Dashboard</span>
+                    </div>
+                    <button class="project-btn">View Details</button>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Smart Security System</h3>
+                        <span class="project-category">Security</span>
+                    </div>
+                    <p class="project-description">Motion detection security system with camera integration and SMS/email notifications for unauthorized access.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Arduino</span>
+                        <span class="tech-tag">PIR Sensor</span>
+                        <span class="tech-tag">Camera Module</span>
+                        <span class="tech-tag">GSM</span>
+                    </div>
+                    <button class="project-btn">View Details</button>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Motor Control System</h3>
+                        <span class="project-category">Control Systems</span>
+                    </div>
+                    <p class="project-description">Precise motor control system with speed regulation and direction control for industrial applications.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Microcontroller</span>
+                        <span class="tech-tag">Motor Drivers</span>
+                        <span class="tech-tag">PWM</span>
+                        <span class="tech-tag">Control Systems</span>
+                    </div>
+                    <button class="project-btn">View Details</button>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>LED Matrix Display</h3>
+                        <span class="project-category">Display Systems</span>
+                    </div>
+                    <p class="project-description">Programmable LED matrix display system for scrolling text and pattern animations with wireless control.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Arduino</span>
+                        <span class="tech-tag">LED Matrix</span>
+                        <span class="tech-tag">Wireless Communication</span>
+                        <span class="tech-tag">Animation</span>
+                    </div>
+                    <button class="project-btn">View Details</button>
+                </div>
             </div>
-            <div class="portfolio-grid" id="portfolio-grid"></div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section class="experience" id="experience">
+    <section id="experience" class="experience">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Experience & Education</h2>
-                <p class="section-subtitle">My professional journey and educational background</p>
+                <h2 class="section-title">Experience</h2>
+                <p class="section-subtitle">My learning journey and professional development</p>
             </div>
-            <div class="experience-content">
-                <div class="experience-timeline" id="experience-timeline"></div>
-                <div class="experience-sidebar">
-                    <div class="resume-download">
-                        <h3>Download Resume</h3>
-                        <p>Get a complete overview of my skills and experience</p>
-                        <button class="btn btn--primary btn--full-width">Download PDF</button>
-                    </div>
-                    <div class="certifications">
-                        <h3>Certifications</h3>
-                        <ul>
-                            <li>Google Analytics Certified</li>
-                            <li>AWS Cloud Practitioner</li>
-                            <li>Adobe Certified Expert</li>
-                            <li>Scrum Master Certified</li>
-                        </ul>
+            <div class="experience-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Embedded Systems Trainee</h3>
+                        <p class="timeline-organization">Professional Training Program</p>
+                        <p class="timeline-duration">Current</p>
+                        <p class="timeline-description">Intensive training in embedded systems design, microcontroller programming, and IoT development.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">What Clients Say</h2>
-                <p class="section-subtitle">Testimonials from satisfied clients</p>
-            </div>
-            <div class="testimonials-slider" id="testimonials-slider"></div>
-            <div class="testimonials-controls">
-                <button class="testimonial-btn prev" id="testimonials-prev">‹</button>
-                <button class="testimonial-btn next" id="testimonials-next">›</button>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Electrical Engineering Student</h3>
+                        <p class="timeline-organization">University</p>
+                        <p class="timeline-duration">Ongoing</p>
+                        <p class="timeline-description">Comprehensive study of electrical engineering principles, circuit design, and power systems.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Ready to start your next project? Let's talk!</p>
+                <p class="section-subtitle">Let's discuss opportunities and collaborations</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
-                        <h3>Email</h3>
-                        <p>alex.thompson@email.com</p>
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>mahamudul.suborno@example.com</p>
+                        </div>
                     </div>
                     <div class="contact-item">
-                        <h3>Phone</h3>
-                        <p>+1 (555) 123-4567</p>
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Bangladesh</p>
+                        </div>
                     </div>
                     <div class="contact-item">
-                        <h3>Location</h3>
-                        <p>San Francisco, CA</p>
+                        <div class="contact-icon">💼</div>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                            <p><a href="#" target="_blank">linkedin.com/in/mahamudul-suborno</a></p>
+                        </div>
                     </div>
-                    <div class="contact-social">
-                        <h3>Follow Me</h3>
-                        <div class="social-links">
-                            <a href="https://www.linkedin.com/in/mahamudul-hasan-suborno/" target="_blank" class="social-link">LinkedIn</a>
-                            <a href="https://github.com/SubornoX" target="_blank" class="social-link">GitHub</a>
-                            <a href="https://www.facebook.com/mahamudul.hasan.suborno" target="_blank" class="social-link">Facebook</a>
-                            <a href="https://www.instagram.com/mahamudul.hasan.suborno/" target="_blank" class="social-link">Instagram</a>
+                    <div class="contact-item">
+                        <div class="contact-icon">🔗</div>
+                        <div class="contact-details">
+                            <h3>GitHub</h3>
+                            <p><a href="#" target="_blank">github.com/mahamudul-suborno</a></p>
                         </div>
                     </div>
                 </div>
-                <form class="contact-form" id="contact-form">
-                    <div class="form-group">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject" class="form-label">Subject</label>
-                        <input type="text" id="subject" name="subject" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn--primary btn--full-width">Send Message</button>
-                </form>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full-width">Send Message</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -227,53 +356,9 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Mahamudul Hasan Suborno</h3>
-                    <p>Electrical Engineer</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#services">PCB Design</a></li>
-                        <li><a href="#services">Programming</a></li>
-                        <li><a href="#services">Embedded Systems</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>mahamudulhasanpersonal@gmail.com</p>
-                    <p>+880 1780534772</p>
-                    <p>Khulna, Bangladesh</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Mahamudul Hasan Suborno. All rights reserved.</p>
-            </div>
+            <p>&copy; 2025 Mahamudul Hasan Suborno. All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="back-to-top">↑</button>
-
-    <!-- Project Modal -->
-    <div class="modal" id="project-modal">
-        <div class="modal-content">
-            <span class="modal-close" id="modal-close">&times;</span>
-            <div class="modal-body" id="modal-body">
-                <!-- Project details will be populated here -->
-            </div>
-        </div>
-    </div>
 
     <script src="app.js"></script>
 </body>
